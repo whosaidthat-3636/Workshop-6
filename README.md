@@ -47,7 +47,6 @@ function setup() {
 -  If StopWord is mentioned in userinput text, next word would be in plural form
 -  Or else (no StopWord), checks if the current word is a noun (RiTa.isNoun), it will be replaced by a random noun (RiTa.randomWord("n")
 
-
 ## Notes
 
 ## 1) User input for text
