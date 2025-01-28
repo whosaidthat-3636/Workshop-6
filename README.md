@@ -28,8 +28,24 @@ function setup() {
 ```
 
 ### 2) RiTa
-- Using Rita.tokenize, RiTa.pluralize, RiTa.isNoun
-- The idea is to 
+- Using Rita.tokenize, RiTa.pluralize, RiTa.isNoun, RiTa.concordance
+```
+ for (let x = 0; x < words.length; x++) {
+	if (RiTa.isStopWord(words[x])) {
+      words[x] = RiTa.pluralize(words[x + 1]);
+    } else {
+      if (RiTa.isNoun(words[x])) {
+        words[x] = RiTa.randomWord("n"); 
+      }
+    }
+  }
+```
+- Words in an array is ran through
+- StopWord falls under RiTa.concordance refers words like 'the','and','a','of'
+  * taken from the reference
+    "{boolean} options.ignoreStopWords: Ignore words like 'the', 'and', 'a', 'of', etc, as specified in RiTa.STOP_WORDS"
+-  If StopWord is mentioned in userinput text, next word would be in plural form
+-  Or else (no StopWord), checks if the current word is a noun (RiTa.isNoun), it will be replaced by a random noun (RiTa.randomWord("n")
 
 
 ## Notes
